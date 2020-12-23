@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(mart8.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        div {
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            width: 80%;
+            text-shadow: 10px 10px 15px grey;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ghost" style="color:#ffffff"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>window.onload = function () {
+            $(function () {
+                var string = "8 Mart Qadınlar Bayramınız Mübarək";
+                var q = jQuery.map(string.split(''), function (letter) {
+                    return $('<span>' + letter + '</span>');
+                });
+                var dest = $('#ghost');
+                var c = 0;
+                var i = setInterval(function () {
+                    q[c].appendTo(dest).hide().fadeIn(900);
+                    c += 1;
+                    if (c >= q.length)
+                        clearInterval(i);
+                }, 200);
+            });
+
+
+        }</script>
+</body>
+
+</html>
